@@ -138,13 +138,6 @@ resource storageAccounts_inh5946wrkshpdazwesa1_name_fileStorage 'Microsoft.Stora
   parent: storageAccounts_inh5946wrkshpdazwesa1_name_resource
   name: 'default'
   properties: {
-    protocolSettings: {
-      smb: {
-      }
-    }
-    cors: {
-      corsRules: []
-    }
     shareDeleteRetentionPolicy: {
       enabled: true
       days: 7
@@ -417,7 +410,6 @@ resource serverfarms_INH_5946_WRKSHP_D_AZWE_ASP_1_name_resource 'Microsoft.Insig
   tags: {
   }
   kind: 'web'
-  etag: '"2500f5e7-0000-0200-0000-634c27f00000"'
   properties: {
     Application_Type: 'web'
     Flow_Type: 'Bluefield'
