@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "e4e29cc6-430f-4f2c-8ac8-396f16803ba6",
+		"name": "AssignmentSanderNederstigt577208",
+		"description": "Postman collection documentation of my SSP assignment API endpoints for an application where an image can be uploaded and edited with a retrieved color from the uploaded image and text based on that color from another public dictionary api.\n\nPNG type images can be uploaded to the `uploadImage` endpoint. The status of the image while it is processing or when it is done being processed can be viewed from the `ImageStatus` endpoint and the url linking to the altered image can be retrieved from the `getImage` endpoint.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15532229"
+	},
+	"item": [
+		{
+			"name": "uploadImage",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "uploadedFile",
+							"description": "The png type image to be uploaded",
+							"type": "file",
+							"src": "/C:/Users/Sander/Pictures/cerise.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/images/upload",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"images",
+						"upload"
+					]
+				},
+				"description": "Upload a PNG type image to be processed and edited. This endpoint returns a JSON object containing the `ImageId` of the id of the uploaded image file."
+			},
+			"response": []
+		},
+		{
+			"name": "getImage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/images/:imageId",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"images",
+						":imageId"
+					],
+					"variable": [
+						{
+							"key": "imageId",
+							"value": "f91f2c00-7754-4ca9-841a-689d1a5174b3",
+							"description": "The globally unique id of the edited image"
+						}
+					]
+				},
+				"description": "Get an image using id `imageId`. This will redirect to the url of the image blob storage using a SAS token providing read only access to the image for 1 hour."
+			},
+			"response": []
+		},
+		{
+			"name": "imageStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/images/:imageId/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"images",
+						":imageId",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "imageId",
+							"value": "f91f2c00-7754-4ca9-841a-689d1a5174b3",
+							"description": "The globally unique id of the image"
+						}
+					]
+				},
+				"description": "Retrieve the current processing status of the uploaded and/or edited image using the i`mageId`. This endpoint returns a JSON object with the status of the image which can either be `\"inProgress\"` or `\"Done\"` ."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://assignmentsandernederstigt577208.azurewebsites.net",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <UserSecretsId>a52fffc3-d637-41e0-b6ac-ca989fd86039</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/1287bad1-5121-4f79-9a17-799078ead39f/resourceGroups/INH-5946-WRKSHP-D-AZWE-RG-1/providers/microsoft.insights/components/INH-5946-WRKSHP-D-AZWE-AI-1</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <ItemGroup>
+	<PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
+	<PackageReference Include="Azure.Storage.Files.Shares" Version="12.11.0" />
+	<PackageReference Include="Azure.Storage.Queues" Version="12.11.1" />
+	<PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
+	<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi" Version="1.4.0" />
+	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.0.1" />
+	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Tables" Version="1.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+	<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Models\Models.csproj" />
+		<ProjectReference Include="..\Services\Services.csproj" />
+	</ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-10-15T18:37:03.4042909Z"
+    },
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2022-10-15T18:42:01.9831398Z"
+    },
+    "appInsights1": {
+      "restored": true,
+      "restoreTime": "2022-10-15T18:41:21.6284829Z"
+    }
+  },
+  "parameters": {
+    "appInsights1.resourceGroupName": {
+      "Name": "appInsights1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "INH-5946-WRKSHP-D-AZWE-RG-1"
+    },
+    "storage1.resourceGroupName": {
+      "Name": "storage1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "INH-5946-WRKSHP-D-AZWE-RG-1"
+    },
+    "storage1.subscriptionId": {
+      "Name": "storage1.subscriptionId",
+      "Type": "subscription",
+      "Value": "1287bad1-5121-4f79-9a17-799078ead39f"
+    },
+    "appInsights1.subscriptionId": {
+      "Name": "appInsights1.subscriptionId",
+      "Type": "subscription",
+      "Value": "1287bad1-5121-4f79-9a17-799078ead39f"
+    }
+  }
+}
